@@ -1,0 +1,22 @@
+{
+  "name": "node_starter_samples",
+  "version": "1.0.0",
+  "description": "Nodejs sample apps for starting project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/delSibal/node_starter_samples.git"
+  },
+  "keywords": [
+    "sample"
+  ],
+  "author": "GUIEEN (Seungyong Kwak)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/delSibal/node_starter_samples/issues"
+  },
+  "homepage": "https://github.com/delSibal/node_starter_samples#readme"
+}
