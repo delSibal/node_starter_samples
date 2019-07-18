@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+        <title>test</title>
+    </head>
+
+    <body>
+        <div style="margin: 30px">
+            <div style="margin: 10px; font-size: 30px;"> # none(): text-only </div>
+            <form action= "/multi-form/text-only" method="POST" enctype="multipart/form-data">
+                <div>
+                    <div style="margin: 10px; font-size: 10px;">If you send file on here, you will see MulterError: Unexpected field</div>
+                    <input type="file" name="myimage" id="imagepath"></input>
+                </div>
+                <div>
+                    <input type="text" name="mytext" id="asdf"></input>
+                </div>
+
+                <input type="submit" name="submit" value="submit"></input>
+            </form>
+        </div>
+        <div style="margin: 30px">
+            <div style="margin: 10px; font-size: 30px;"> # single('avatar') </div>
+            <form action= "/multi-form/profile" method="POST" enctype="multipart/form-data">
+                <input type="file" name="avatar" id="imagepath"></input>
+                <input type="submit" name="submit" value="submit"></input>
+            </form>
+        </div>
+        <div style="margin: 30px">
+            <div style="margin: 10px; font-size: 30px;"> # array('photos', 12) </div>
+            <form action= "/multi-form/photos/upload" method="POST" enctype="multipart/form-data">
+                <div>
+                    <input type="file" name="photos" id="imagepath"></input>
+                </div>
+                <div>
+                    <input type="file" name="photos" id="imagepath"></input>
+                </div>
+                <div>
+                    <input type="file" name="photos" id="imagepath"></input>
+                </div>
+                <input type="submit" name="submit" value="submit"></input>
+            </form>
+        </div>
+        <div style="margin: 30px">
+            <div style="margin: 10px; font-size: 30px;"> # any() </div>
+            <form action="/multi-form/any" method="POST" enctype="multipart/form-data">
+                <input type="file" name="myimage" id="imagepath"></input>
+                <input type="submit" name="submit" value="submit"></input>
+            </form>
+        </div>
+    </body>
+</html>
