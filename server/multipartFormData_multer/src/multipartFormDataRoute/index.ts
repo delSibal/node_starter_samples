@@ -1,4 +1,6 @@
 import { Router } from 'express'
+import fs from 'fs'
+import path from 'path'
 
 import { multerWrapper, uploadToDisk } from '../lib/multerManager'
 
@@ -21,6 +23,16 @@ router.post('/photos/upload', multerWrapper(uploadToDisk.array('photos', 12)), (
 router.post('/any', multerWrapper(uploadToDisk.any()), (req, res, next) => {
     console.log(req.files)
     res.json({ success: true })
+})
+
+router.get('/file', (req, res) => {
+    const fileNames = fs.readdirSync(path.resolve(__dirname, '../../uploads'))
+
+    if (fileNames.length === 0) {
+        throw new Error('No file exist')
+    }
+
+    res.sendFile(path.resolve(__dirname, `../../uploads/${fileNames[0]}`))
 })
 
 export default router
